@@ -108,5 +108,4 @@ def load_plugins(cfg: Config = Config(), debug: bool = False) -> List[object]:
             a_keys = dir(a_module)
             if "_abc_impl" in a_keys and a_module.__name__ != "AutoGPTPluginTemplate":
                 plugin_modules.append(a_module)
-    loaded_plugin_modules = blacklist_whitelist_check(plugin_modules, cfg)
-    return loaded_plugin_modules
+    return blacklist_whitelist_check(plugin_modules, cfg)
